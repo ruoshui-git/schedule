@@ -11,5 +11,6 @@
   "time": "时间",
   "choose-a-language": "选择语言",
   "before-todays-schedule": "今日课程之前",
-  "before-period": "{period} 前"
+  "before-period": "{period} 前",
+  "page-title": "时间表"
 }

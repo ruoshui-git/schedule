@@ -1,7 +1,12 @@
 <script lang="ts">
     import LangChooser from "./components/LangChooser.svelte";
     import SimpleSchedule from "./components/SimpleSchedule.svelte";
+    import { _ } from "svelte-i18n";
 </script>
+
+<svelte:head>
+    <title>{$_("page-title")}</title>
+</svelte:head>
 
 <main>
     <SimpleSchedule />

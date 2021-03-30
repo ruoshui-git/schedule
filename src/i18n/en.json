@@ -12,5 +12,6 @@
   "time": "Time",
   "choose-a-language": "Choose a language",
   "before-todays-schedule": "Before Today's Schedule",
-  "before-period": "Before {period}"
+  "before-period": "Before {period}",
+  "page-title": "Schedules"
 }
