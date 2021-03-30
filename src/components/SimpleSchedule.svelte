@@ -1,16 +1,14 @@
 <script lang="typescript">
     import type { DateTime, Duration } from "luxon";
+    import { _ } from "svelte-i18n";
 
     import { time } from "../currentTime";
     import { Period, schedule, Schedule } from "../schedule";
     import Bell from "./Bell.svelte";
     import PeriodList from "./PeriodList.svelte";
     import ScheduleChooser from "./ScheduleChooser.svelte";
-
     import TimeDiff from "./TimeDiff.svelte";
     import TimeDisplay from "./TimeDisplay.svelte";
-
-    // let schedule = SAMPLE_SCHEDULE;
 
     let pdName: string;
     let into: Duration | null;
@@ -26,9 +24,9 @@
         if (res === null) {
             // time is before schedule
             const pd0 = schedule.periods[0];
-            pdName = `Before Today's Schedule`;
+            pdName = $_("before-todays-schedule");
             into = null;
-            remaining = time.diff(pd0.interval.start);
+            remaining = pd0.interval.start.diff(time);
             altStyle = false;
         } else {
             if (res instanceof Period) {
@@ -40,7 +38,11 @@
                 altStyle = false;
             } else {
                 // passing
-                pdName = `Before ${res.after.name}`;
+                pdName = $_("before-period", {
+                    values: {
+                        period: res.after.name,
+                    },
+                });
                 into = time.diff(res.before.interval.end);
                 remaining = res.after.interval.start.diff(time);
                 altStyle = true;
