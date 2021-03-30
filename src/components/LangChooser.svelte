@@ -6,7 +6,13 @@
     {$_("choose-a-language")}:
     <select bind:value={$locale}>
         {#each $locales as locale}
-            <option value={locale}>{locale}</option>
+            <option value={locale}
+                >{locale === "zh-Hans"
+                    ? "中文"
+                    : locale === "en"
+                    ? "English"
+                    : locale}</option
+            >
         {/each}
     </select>
 </div>
