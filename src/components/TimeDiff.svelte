@@ -4,6 +4,7 @@
     export let remaining: Duration;
     export let altStyle: boolean;
     import { _ } from "svelte-i18n";
+    import { warningPeriod } from "../schedule";
 </script>
 
 <div class="container">
@@ -16,7 +17,9 @@
     {/if}
 
     <div class="remaining">
-        <span id={altStyle ? "altStyle" : ""}
+        <span
+            id={altStyle ? "altStyle" : ""}
+            class:blink={remaining <= $warningPeriod}
             >{Math.ceil(remaining.as("minutes"))}</span
         >{$_("minutes-remaining")}
     </div>
@@ -50,5 +53,15 @@
     .into,
     .remaining {
         margin: 0 1rem;
+    }
+
+    .blink {
+        animation: blinker cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.5s infinite;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
     }
 </style>

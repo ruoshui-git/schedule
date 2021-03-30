@@ -1,10 +1,11 @@
 Todos:
-[x] - Change warning period
-[x] - Choose schedule
-[x] - translate
-[ ] - Add custom schedule
-[ ] - Shift all periods in the schedule
-[ ] - store settings (volume, bellEnabled?, custom schedules, active schedule, etc)
+- [x] Change warning period
+- [x] Choose schedule
+- [x] translate
+- [x] blink on warning
+- [ ] Add custom schedule
+- [ ] Shift all periods in the schedule
+- [ ] store settings (volume, bellEnabled?, custom schedules, active schedule, etc)
 
 _Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
 

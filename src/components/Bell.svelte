@@ -9,7 +9,7 @@
 <script lang="typescript">
     import { DateTime, Duration } from "luxon";
     import { onDestroy } from "svelte";
-    import { schedule } from "../schedule";
+    import { schedule, warningPeriod } from "../schedule";
 
     import { _ } from "svelte-i18n";
 
@@ -40,6 +40,9 @@
     let bellEnabled = true;
     let warningEnabled = true;
     let minutesForWarning = 5;
+
+    $: warningPeriod.set(Duration.fromObject({ minutes: minutesForWarning }));
+
     let volume = 50;
     $: bell.volume = volume / 100;
 
@@ -92,7 +95,7 @@
 
     <label>
         <input type="checkbox" bind:checked={warningEnabled} />{$_("ring-bell")}
-        <input type="number" bind:value={minutesForWarning} max="20" min="1" />
+        <input type="number" bind:value={minutesForWarning} max="50" min="1" />
         {$_("minutes-before-period-ends")}
     </label>
 

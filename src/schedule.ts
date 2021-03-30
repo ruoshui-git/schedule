@@ -1,4 +1,4 @@
-import { DateTime, Interval } from "luxon";
+import { DateTime, Duration, Interval } from "luxon";
 import { writable } from "svelte/store";
 
 export class Period {
@@ -114,3 +114,5 @@ function* windowPairs<T>(iter: Iterable<T>): Generator<[T, T], void, unknown> {
 export const SCHEDULES = [SAMPLE_SCHEDULE, SAMPLE_SCHEDULE2];
 
 export const schedule = writable(SAMPLE_SCHEDULE2);
+
+export const warningPeriod = writable(Duration.fromObject({ minutes: 5 }));
