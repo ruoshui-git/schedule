@@ -91,7 +91,7 @@ export const SAMPLE_SCHEDULE = new Schedule("Stuyvesant 5-period schedule", [
 ]);
 
 export const SAMPLE_SCHEDULE2 = new Schedule("秋季班课程时间表", [
-  new Period("课前", "00:00", "06:00"),
+  new Period("休息", "00:00", "06:00"),
   new Period("第一节", "06:00", "06:55"),
   new Period("第二节", "07:00", "07:55"),
   new Period("休息", "08:00", "18:00"),

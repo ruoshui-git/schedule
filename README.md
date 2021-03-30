@@ -1,7 +1,7 @@
 Todos:
 [x] - Change warning period
 [x] - Choose schedule
-[ ] - translate
+[x] - translate
 [ ] - Add custom schedule
 [ ] - Shift all periods in the schedule
 [ ] - store settings (volume, bellEnabled?, custom schedules, active schedule, etc)

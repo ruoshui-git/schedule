@@ -1,8 +1,9 @@
 <script lang="typescript">
   import { SCHEDULES, schedule } from "../schedule";
+  import { _ } from "svelte-i18n";
 </script>
 
-<label for="schedule-chooser">Choose a Schedule:</label>
+<label for="schedule-chooser">{$_('choose-a-schedule')}: </label>
 <!-- svelte-ignore a11y-no-onchange -->
 <select
   name="schedule-chooser"
@@ -16,3 +17,9 @@
     <option value={s}>{s.name}</option>
   {/each}
 </select>
+
+<style>
+  label {
+    display: inline;
+  }
+</style>

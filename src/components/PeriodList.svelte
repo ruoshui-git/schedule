@@ -1,8 +1,9 @@
 <script lang="typescript">
-  import { DateTime, Interval } from "luxon";
+  import { DateTime } from "luxon";
   import type { Period } from "../schedule";
   export let periods: Period[];
   export let highlights: number[] = [];
+  import { _ } from "svelte-i18n";
 
   const timeFmtOptions = {
     hour: "numeric",
@@ -15,14 +16,14 @@
 
 <table>
   <tr>
-    <th>Period</th>
-    <th>Time</th>
+    <th>{$_("period")}</th>
+    <th>{$_("time")}</th>
   </tr>
   {#each periods as pd, i}
     <tr class:highlight={highlights.includes(i)}>
       <td>{pd.name}</td>
       <td>
-        {pd.interval.start
+        <!-- pd.interval.start
           .setZone(zone)
           .setLocale("en")
           // @ts-ignore
@@ -32,7 +33,10 @@
             .setZone(zone)
             .setLocale("en")
             // @ts-ignore
-            .toLocaleString(timeFmtOptions)}</td
+            .toLocaleString(timeFmtOptions) -->
+        {pd.interval.start.setZone(zone).toFormat("t") +
+          " - " +
+          pd.interval.end.setZone(zone).toFormat("t")}</td
       >
     </tr>
   {/each}

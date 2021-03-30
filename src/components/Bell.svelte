@@ -11,6 +11,8 @@
   import { onDestroy } from "svelte";
   import { schedule } from "../schedule";
 
+  import { _ } from "svelte-i18n";
+
   $: timesToRing = $schedule.periods
     .map((pd) => {
       let times = [pd.interval.start, pd.interval.end];
@@ -78,23 +80,24 @@
 
 <div class="bell">
   <label class="bell-volume"
-    >Bell Volume: {volume}
+    >{$_('volume')}: {volume}
     <input type="range" min="0" max="100" step="2" bind:value={volume} />
   </label>
 
   <label class="container">
     <input type="checkbox" bind:checked={bellEnabled} />
-    Enable Bell
+    {$_('enable-bell')}
     <span class="checkmark" />
   </label>
 
   <label>
-    <input type="checkbox" bind:checked={warningEnabled} />Ring
-    <input type="number" bind:value={minutesForWarning} max="20" min="1" /> minutes
-    before period ends
+    <input type="checkbox" bind:checked={warningEnabled} />{$_('ring-bell')}
+    <input type="number" bind:value={minutesForWarning} max="20" min="1" /> {$_('minutes-before-period-ends')}
   </label>
 
-  <button class="test-bell" on:click={bell.play.bind(bell)}> Test Bell </button>
+  <button class="test-bell" on:click={bell.play.bind(bell)}>
+    {$_('test-bell')}
+  </button>
 </div>
 
 <style>

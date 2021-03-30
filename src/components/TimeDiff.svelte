@@ -1,8 +1,9 @@
-<script lang="ts">
+<script lang="typescript">
   import type { Duration } from "luxon";
   export let into: Duration | null;
   export let remaining: Duration;
   export let altStyle: boolean;
+  import { _ } from "svelte-i18n";
 </script>
 
 <div class="container">
@@ -10,14 +11,14 @@
     <div class="into">
       <span id={altStyle ? "altStyle" : ""}
         >{Math.floor(into.as("minutes"))}</span
-      > minutes into
+      >{$_("minutes-into")}
     </div>
   {/if}
 
   <div class="remaining">
     <span id={altStyle ? "altStyle" : ""}
       >{Math.ceil(remaining.as("minutes"))}</span
-    > minutes remaining
+    >{$_("minutes-remaining")}
   </div>
 </div>
 
@@ -46,7 +47,8 @@
     color: rgb(225, 63, 27);
   }
 
-  .into, .remaining {
+  .into,
+  .remaining {
     margin: 0 1rem;
   }
 </style>
