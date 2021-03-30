@@ -8,5 +8,5 @@ export const time = readable(DateTime.now(), function start(set) {
 
     return function stop() {
         clearInterval(interval);
-    }
-})
+    };
+});
