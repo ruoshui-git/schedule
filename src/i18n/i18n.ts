@@ -10,8 +10,8 @@ import zhHans from "./zh-Hans.json";
 export default () => {
     //   register("en", () => import("./e n.json"));
     //   register("zh-Hans", () => import("./zh-HANS.json"));
-    console.log("loading locale");
-    addMessages("en", en);
+    // console.log("loading locale");
+    // addMessages("en", en);
     addMessages("zh-Hans", zhHans);
 
     init({
