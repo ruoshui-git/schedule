@@ -9,5 +9,7 @@
   "ring-bell": "下课",
   "period": "课程",
   "time": "时间",
-  "choose-a-language": "选择语言"
+  "choose-a-language": "选择语言",
+  "before-todays-schedule": "今日课程之前",
+  "before-period": "{period} 前"
 }

@@ -1,14 +1,16 @@
 {
-    "test-bell": "Test Bell",
-    "minutes-remaining": "minutes remaining",
-    "minutes-into": "minutes into",
-    "choose-a-schedule": "Choose a schedule",
-    "enable-bell": "Enable Bell",
-    "bell-volume": "Bell Volume",
-    "volume": "Volume",
-    "ring-bell": "Ring bell",
-    "minutes-before-period-ends": "minutes before period ends",
-    "period": "Period",
-    "time": "Time",
-    "choose-a-language": "Choose a language"
+  "test-bell": "Test Bell",
+  "minutes-remaining": "minutes remaining",
+  "minutes-into": "minutes into",
+  "choose-a-schedule": "Choose a schedule",
+  "enable-bell": "Enable Bell",
+  "bell-volume": "Bell Volume",
+  "volume": "Volume",
+  "ring-bell": "Ring bell",
+  "minutes-before-period-ends": "minutes before period ends",
+  "period": "Period",
+  "time": "Time",
+  "choose-a-language": "Choose a language",
+  "before-todays-schedule": "Before Today's Schedule",
+  "before-period": "Before {period}"
 }
