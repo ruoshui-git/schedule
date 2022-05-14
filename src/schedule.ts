@@ -79,6 +79,18 @@ function makeTime(repr: string): DateTime {
     return dt;
 }
 
+export const STUDENTS_SCHEDULE = new Schedule("留学生课表", [
+    new Period("休息", "00:00", "05:00"),
+    new Period("起床&洗漱", "05:00", "05:20"),
+    new Period("锻炼", "05:20", "05:20"),
+    new Period("六大任务", "06:00", "06:50"),
+    new Period("英语", "07:00", "07:50"),
+    new Period("******", "07:50", "16:00"),
+    new Period("舞蹈", "16:00", "16:50"),
+    new Period("舞蹈 (周五 - 周日)", "17:00", "17:50"),
+    new Period("休息", "17:50", "23:59"),
+]);
+
 export const SAMPLE_SCHEDULE = new Schedule("Stuyvesant 5-period schedule", [
     new Period("Before school", "00:00", "09:10"),
     new Period("Period 1 & 6", "09:10", "10:05"),
@@ -111,8 +123,8 @@ function* windowPairs<T>(iter: Iterable<T>): Generator<[T, T], void, unknown> {
     }
 }
 
-export const SCHEDULES = [SAMPLE_SCHEDULE, SAMPLE_SCHEDULE2];
+export const SCHEDULES = [STUDENTS_SCHEDULE, SAMPLE_SCHEDULE];
 
-export const schedule = writable(SAMPLE_SCHEDULE2);
+export const schedule = writable(SCHEDULES[0]);
 
 export const warningPeriod = writable(Duration.fromObject({ minutes: 5 }));

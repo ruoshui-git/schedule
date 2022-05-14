@@ -11,11 +11,12 @@ export default () => {
     //   register("en", () => import("./e n.json"));
     //   register("zh-Hans", () => import("./zh-HANS.json"));
     // console.log("loading locale");
-    // addMessages("en", en);
+    addMessages("en", en);
     addMessages("zh-Hans", zhHans);
 
     init({
         fallbackLocale: "zh-Hans",
-        initialLocale: getLocaleFromNavigator(),
+        initialLocale: "zh-Hans",
+        // initialLocale: getLocaleFromNavigator(),
     });
 };

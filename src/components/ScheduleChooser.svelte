@@ -10,6 +10,7 @@
     id="schedule-chooser"
     on:change={(e) => {
         schedule.set(SCHEDULES[e.currentTarget.selectedIndex]);
+        console.log($schedule);
     }}
     value={$schedule}
 >
