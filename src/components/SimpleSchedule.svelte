@@ -53,8 +53,16 @@
     $: buildLayout($time, $schedule);
 </script>
 
-<h2 class="title">{$schedule.name}</h2>
-
+<h2 class="title">
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a
+        on:click={() => {
+            window.open(window.location.href, "_blank", "menubar=0");
+        }}
+    >
+        {$schedule.name}
+    </a>
+</h2>
 <div class="outer">
     <div>
         <h3 class="pd-name">{pdName}</h3>
@@ -78,5 +86,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+    a {
+        cursor: pointer;
     }
 </style>
