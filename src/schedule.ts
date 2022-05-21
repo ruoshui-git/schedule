@@ -82,7 +82,7 @@ function makeTime(repr: string): DateTime {
 export const STUDENTS_SCHEDULE = new Schedule("留学生课表", [
     new Period("休息", "00:00", "05:00"),
     new Period("起床&洗漱", "05:00", "05:20"),
-    new Period("锻炼", "05:20", "05:20"),
+    new Period("锻炼", "05:20", "05:50"),
     new Period("六大任务", "06:00", "06:50"),
     new Period("英语", "07:00", "07:50"),
     new Period("******", "07:50", "16:00"),
